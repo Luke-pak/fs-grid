@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container, Row, Col, Navbar } from 'react-bootstrap';
+import Main from './Main/Main';
+import SideMain from './Side/SideMain';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar style={{ backgroundColor: '#142d58' }}>
+        <Navbar.Brand href="#home" style={{ color: 'white' }}>
+          Factory Salad
+        </Navbar.Brand>
+      </Navbar>
+
+      <Container style={{ height: '94.2vh' }} fluid>
+        <Row className={'h-100'}>
+          <Col xl="3" style={{ backgroundColor: '#3b3e43' }}>
+            <SideMain />
+          </Col>
+          <Col xl="9" style={{ backgroundColor: '#292d33' }}>
+            <Main />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
